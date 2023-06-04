@@ -1,0 +1,34 @@
+baseURL = "https://blog.coolerbsd.me"
+languageCode = "en-us"
+title = "coolerbsd"
+theme = "bare"
+enableGitInfo = true
+
+[taxonomies]
+  tag = "tags"
+  series = "series"
+
+[params]
+mainSections = ["post"]
+author = "Gabriel M. Dutra"
+email = "coolerbsd@proton.me"
+repoLink = "https://github.com/orf/bare-hugo-theme"
+description = 'Just another computer programmer'
+# PostCSS is harder than it should be to get working on a theme
+# example site. It's easy on _your_ site.
+postcss = false
+# Include the author name in the <title> of articles
+includeAuthorInTitle = true
+
+[[params.social]]
+icon = "github"
+url = "https://github.com/coolerbsd/"
+
+[[params.social]]
+icon = "twitter"
+url = "https://twitter.com/coolerbsd/"
+
+
+[[params.social]]
+icon = "linkedin"
+url = "https://linkedin.com/in/coolerbsd/"

