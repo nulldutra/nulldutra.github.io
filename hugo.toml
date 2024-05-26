@@ -1,0 +1,30 @@
+baseurl = "https://nulldutra.me/"
+title = "nulldutra"
+theme = "console"
+languageCode = "en-us"
+
+[params]
+#titleCutting = true
+
+  animateStyle = "animated zoomIn fast" 
+
+  [[params.navlinks]]
+  name = "About/"
+  url = "about/"
+
+  [[params.navlinks]]
+  name = "Posts/"
+  url = "posts/"
+  
+  [[params.navlinks]]
+  name = "Photos/"
+  url = "photos/"
+
+  [[params.navlinks]]
+  name = "GitHub/"
+  url = "https://github.com/nulldutra"
+
+  [[params.navlinks]]
+  name = "LinkedIn/"
+  url = "https://linkedin.com/in/nulldtr"
+
