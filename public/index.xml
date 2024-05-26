@@ -9,11 +9,11 @@
     <lastBuildDate>Sat, 25 May 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://nulldutra.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>About</title>
+      <title>$ whoami</title>
       <link>https://nulldutra.github.io/about/</link>
       <pubDate>Sat, 25 May 2024 00:00:00 +0000</pubDate>
       <guid>https://nulldutra.github.io/about/</guid>
-      <description>Just another computer programmer</description>
+      <description>Hi, I&amp;rsquo;m Gabriel. I&amp;rsquo;m interested in many things about computer science.&#xA;Cloud Computing Security Programming Linux and *BSD Also, I&amp;rsquo;m committer on FreeBSD, see my contributions:&#xA;https://www.freshports.org/search.php?stype=committer&amp;amp;method=exact&amp;amp;query=dutra&amp;amp;num=500&amp;amp;orderby=category&amp;amp;orderbyupdown=asc&amp;amp;search=Search Projects CloudFront Switch Origin I worked on this project while developing a fallback environment in my job. The purpose is to switch the origin of the CloudFront to another endpoint transparently for the user.&#xA;URL: https://github.com/nulldutra/cloudfront-switch-origin&#xA;Find me on: https://github.com/nulldutra&#xA;https://twitter.com/nulldutra&#xA;https://linkedin.com/in/nulldtr</description>
     </item>
     <item>
       <title>Deploying an EKS cluster using Terraform</title>
