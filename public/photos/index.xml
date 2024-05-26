@@ -2,45 +2,45 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Photos on nulldutra</title>
-    <link>https://nulldutra.me/photos/</link>
+    <link>https://nulldutra.github.io/photos/</link>
     <description>Recent content in Photos on nulldutra</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 30 Apr 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://nulldutra.me/photos/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://nulldutra.github.io/photos/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Buzios, RJ</title>
-      <link>https://nulldutra.me/photos/buzios/</link>
+      <link>https://nulldutra.github.io/photos/buzios/</link>
       <pubDate>Tue, 30 Apr 2024 00:00:00 +0000</pubDate>
-      <guid>https://nulldutra.me/photos/buzios/</guid>
+      <guid>https://nulldutra.github.io/photos/buzios/</guid>
       <description></description>
     </item>
     <item>
       <title>Unix network programming - book</title>
-      <link>https://nulldutra.me/photos/unix-network-programming/</link>
+      <link>https://nulldutra.github.io/photos/unix-network-programming/</link>
       <pubDate>Sat, 20 Apr 2024 00:00:00 +0000</pubDate>
-      <guid>https://nulldutra.me/photos/unix-network-programming/</guid>
+      <guid>https://nulldutra.github.io/photos/unix-network-programming/</guid>
       <description></description>
     </item>
     <item>
       <title>Install OpenBSD</title>
-      <link>https://nulldutra.me/photos/install-openbsd/</link>
+      <link>https://nulldutra.github.io/photos/install-openbsd/</link>
       <pubDate>Thu, 25 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://nulldutra.me/photos/install-openbsd/</guid>
+      <guid>https://nulldutra.github.io/photos/install-openbsd/</guid>
       <description></description>
     </item>
     <item>
       <title>Safira</title>
-      <link>https://nulldutra.me/photos/cat/</link>
+      <link>https://nulldutra.github.io/photos/cat/</link>
       <pubDate>Sun, 21 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://nulldutra.me/photos/cat/</guid>
+      <guid>https://nulldutra.github.io/photos/cat/</guid>
       <description></description>
     </item>
     <item>
       <title>BSDaemon</title>
-      <link>https://nulldutra.me/photos/freebsd/</link>
+      <link>https://nulldutra.github.io/photos/freebsd/</link>
       <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://nulldutra.me/photos/freebsd/</guid>
+      <guid>https://nulldutra.github.io/photos/freebsd/</guid>
       <description></description>
     </item>
   </channel>

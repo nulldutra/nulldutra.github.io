@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on nulldutra</title>
-    <link>https://nulldutra.me/posts/</link>
+    <link>https://nulldutra.github.io/posts/</link>
     <description>Recent content in Posts on nulldutra</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 25 May 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://nulldutra.me/posts/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://nulldutra.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Deploying an EKS cluster using Terraform</title>
-      <link>https://nulldutra.me/posts/eks-terraform-setup/</link>
+      <link>https://nulldutra.github.io/posts/eks-terraform-setup/</link>
       <pubDate>Sat, 25 May 2024 00:00:00 +0000</pubDate>
-      <guid>https://nulldutra.me/posts/eks-terraform-setup/</guid>
+      <guid>https://nulldutra.github.io/posts/eks-terraform-setup/</guid>
       <description>&lt;p&gt;In this post, I will explain how to deploy an EKS cluster using Terraform and the public&#xA;module of the project terraform-aws-module.&lt;/p&gt;</description>
     </item>
   </channel>
