@@ -4,6 +4,27 @@
     
         
         <url>
+            <loc>https://nulldutra.github.io/posts/homelab-bare-matel-k8s/</loc>
+            <lastmod>2024-06-22T00:00:00+00:00</lastmod>
+        </url>
+        
+    
+        
+        <url>
+            <loc>https://nulldutra.github.io/</loc>
+            <lastmod>2024-06-22T00:00:00+00:00</lastmod>
+        </url>
+        
+    
+        
+        <url>
+            <loc>https://nulldutra.github.io/posts/</loc>
+            <lastmod>2024-06-22T00:00:00+00:00</lastmod>
+        </url>
+        
+    
+        
+        <url>
             <loc>https://nulldutra.github.io/about/</loc>
             <lastmod>2024-05-25T00:00:00+00:00</lastmod>
         </url>
@@ -12,20 +33,6 @@
         
         <url>
             <loc>https://nulldutra.github.io/posts/eks-terraform-setup/</loc>
-            <lastmod>2024-05-25T00:00:00+00:00</lastmod>
-        </url>
-        
-    
-        
-        <url>
-            <loc>https://nulldutra.github.io/</loc>
-            <lastmod>2024-05-25T00:00:00+00:00</lastmod>
-        </url>
-        
-    
-        
-        <url>
-            <loc>https://nulldutra.github.io/posts/</loc>
             <lastmod>2024-05-25T00:00:00+00:00</lastmod>
         </url>
         
