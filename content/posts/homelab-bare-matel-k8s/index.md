@@ -129,7 +129,7 @@ I will install the WeaveNet plugin, but, there are many plugins, like:
 See the complete list:
 https://kubernetes.io/docs/concepts/cluster-administration/addons/#networking-and-network-policy
 
-## Installing WeveNet (run only on master)
+## Installing WeaveNet (run only on master)
 
 ```
 export KUBECONFIG=/etc/kubernetes/admin.conf
